@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,1093" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,1389" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -22,6 +22,7 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -42,15 +43,23 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="468,1224" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="tbl_이름" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="r" KeyModifiers="Win">
+    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="426,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="r" KeyModifiers="Win">
       <ui:SendHotkey.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="5cd5de4b-da03-4c20-bd7b-512e4956a897">
           <ui:Target.TimeoutMS>
@@ -62,7 +71,7 @@
         </ui:Target>
       </ui:SendHotkey.Target>
     </ui:SendHotkey>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="notepad">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="426,96" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="notepad">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="548f7651-48fd-49d2-bf3f-cc57907eb8f7">
           <ui:Target.TimeoutMS>
@@ -74,7 +83,7 @@
         </ui:Target>
       </ui:TypeInto.Target>
     </ui:TypeInto>
-    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
+    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="426,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
       <ui:SendHotkey.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="dc170997-058d-4731-ace9-da63c3ab6069">
           <ui:Target.TimeoutMS>
@@ -86,41 +95,46 @@
         </ui:Target>
       </ui:SendHotkey.Target>
     </ui:SendHotkey>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="Hello World">
-      <ui:TypeInto.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="ed5ed939-fe54-42a4-b1c8-573a6d66f0a0">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:TypeInto.Target>
-    </ui:TypeInto>
-    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="s" KeyModifiers="Ctrl">
-      <ui:SendHotkey.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="cbe2b231-38d4-4c17-b9c4-03e736e5b030">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:SendHotkey.Target>
-    </ui:SendHotkey>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="HelloWorld">
-      <ui:TypeInto.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="10bdebc4-c166-466e-83da-805792ca3acc">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:TypeInto.Target>
-    </ui:TypeInto>
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[tbl_이름]" Delimitator="Comma" DisplayName="Read CSV" FilePath="sample.csv" sap:VirtualizedContainerService.HintSize="426,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[tbl_이름]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="426,492" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[&quot;Hello &quot; + row.item(0).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="ed5ed939-fe54-42a4-b1c8-573a6d66f0a0">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="enter" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="a0821dc2-1597-474f-b224-6fc263255b01">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
   </Sequence>
 </Activity>
