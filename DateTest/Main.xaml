@@ -57,11 +57,7 @@
           <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateTime.Now" />
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="i">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="i" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -97,7 +93,7 @@
         </Sequence>
       </ui:InterruptibleWhile.Body>
       <ui:InterruptibleWhile.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="i &lt; 10" />
+        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="i &lt; 10" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
       </ui:InterruptibleWhile.Condition>
     </ui:InterruptibleWhile>
   </Sequence>
